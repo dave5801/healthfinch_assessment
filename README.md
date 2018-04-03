@@ -6,3 +6,9 @@ file containing the current date/time into the S3 bucket. Create an IAM Policy a
 ## Getting Started
 
 More to follow...
+
+## Dependencies
+
+```
+boto
+```
