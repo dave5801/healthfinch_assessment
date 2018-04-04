@@ -10,9 +10,9 @@ a directory of nicholas cage photos, just to be weird.
 import boto
 #import boto3
 import os
-#import boto.s3
+import boto.s3
 import sys
-#from boto.s3.key import Key
+from boto.s3.key import Key
 import string
 import random
 
@@ -32,7 +32,7 @@ class S3BucketProperties(object):
 
     def generate_unique_s3_bucket_name(self, size=20, chars=string.ascii_uppercase + string.digits):
         random_str = ''.join(random.choice(chars) for _ in range(size))
-        return random_str.lower() + "photo-keyset-bucket"
+        return random_str.lower() + "-photo-directory-bucket"
 
 class CreateNewS3Bucket(object):
 
@@ -70,3 +70,5 @@ if __name__ == '__main__':
     print(test_s3_props.get_aws_credentials())
     print(test_s3_props.get_list_of_photos_from_local_directory())
     print(test_s3_props.generate_unique_s3_bucket_name())
+
+    new_s3_bucket = CreateNewS3Bucket(testfile)
