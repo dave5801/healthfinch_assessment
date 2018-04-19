@@ -12,6 +12,10 @@ import os
 iam = boto.connect_iam(os.environ.get('AWS_ACCESS_KEY_ID'), 
     os.environ.get('AWS_SECRET_ACCESS_KEY'))
 
+# Create user
+user_response = iam.create_user('aws-user')
+
+print(user_response)
 
 #
 # Now create a group for EC2/S3 users.
